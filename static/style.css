@@ -1,0 +1,88 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f8;
+    color: #333;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+form, .form-group, .report > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+input[type="submit"],
+.btn {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+input[type="submit"]:hover,
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.report p {
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+.good {
+    color: green;
+    font-weight: bold;
+}
+
+.bad {
+    color: crimson;
+    font-weight: bold;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Raport hasła</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Raport hasła</h1>
+
+    <div class="report">
+      <div>
+        <p>🔐 Twoje hasło:</p>
+        <p><strong>{{ password }}</strong></p>
+      </div>
+
+      <div>
+        <p>📏 Długość hasła:</p>
+        <p>{{ password_len }} znaków</p>
+      </div>
+
+      <div>
+        <p>
+          <span class="{{ 'good' if length_ok else 'bad' }}">
+            {{ '✅' if length_ok else '✖' }} Długość (min. 8 znaków)
+          </span>
+        </p>
+        <p>
+          <span class="{{ 'good' if has_upper else 'bad' }}">
+            {{ '✅' if has_upper else '✖' }} Zawiera wielką literę
+          </span>
+        </p>
+        <p>
+          <span class="{{ 'good' if has_lower else 'bad' }}">
+            {{ '✅' if has_lower else '✖' }} Zawiera małą literę
+          </span>
+        </p>
+        <p>
+          <span class="{{ 'good' if has_digit else 'bad' }}">
+            {{ '✅' if has_digit else '✖' }} Zawiera cyfrę
+          </span>
+        </p>
+        <p>
+          <span class="{{ 'good' if has_special else 'bad' }}">
+            {{ '✅' if has_special else '✖' }} Zawiera znak specjalny
+          </span>
+        </p>
+      </div>
+
+      <div>
+        <p>🛡️ Ocena końcowa:</p>
+        <p class="{{ 'good' if secure else 'bad' }}">
+          {{ 'Silne hasło' if secure else 'Słabe hasło' }}
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <a href="/" class="btn">🔙 Wróć</a>
+    </div>
+  </div>
+</body>
+</html>

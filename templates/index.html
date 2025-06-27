@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprawdź hasło</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sprawdzanie hasła</h1>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="password">Wpisz swoje hasło:</label>
+                <input type="text" name="password" id="password" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Sprawdź">
+            </div>
+        </form>
+
+        <form action="{{ url_for('generate') }}" method="get">
+            <div class="form-group">
+                <input type="submit" class="btn" value="🎲 Wygeneruj losowe hasło">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
